@@ -1,55 +1,60 @@
----
-title: 'Stock Assessment for Opakapaka (\textit{Pristipomoides filamentosus}) on U.S. West Coast in 2024'
-author:
-  - name: 'Megumi Oshima'
-    affiliations:
-      - name: 'NOAA Fisheries Pacific Islands Fisheries Science Center'
-        address: '1845 Wasp Boulevard'
-        city: 'Honolulu'
-        state: 'HI'
-        postal-code: '96818'
-date: today
-lang: en 
-keep-tex: true 
-cover: 
-pdf-engine: lualatex
-format: 
-  pdf: 
-    documentclass: scrartcl
-    number-sections: true
-    template-partials:
-      - 'support_files/before-body.tex'
-      - 'support_files/_titlepage.tex'
-    include-in-header:
-      - 'support_files/in-header.tex'
-    header-includes:
-      \usepackage{draftwatermark}
-      \SetWatermarkText{DRAFT}
-    toc: true
-    lof: true
-    lot: true
-    titlepage-geometry: 
-      - top=2in
-      - bottom=1in
-      - right=1in
-      - left=1in
-output-file: 'Opakapaka_SAR_2024' 
-params:
-   office: 'PIFSC'
-   species: 'Opakapaka'
-   spp_latin: 'Pristipomoides filamentosus'
-   region: 'U.S. West Coast'
-bibliography: 
--  asar_references.bib 
+---    
+title: 'Stock Assessment for Opakapaka (Pristipomoides filamentosus) on U.S. West Coast in 2024'    
+author:    
+  - name: 'Megumi Oshima'    
+    affiliations:    
+      - name: 'NOAA Fisheries Pacific Islands Fisheries Science Center'    
+        address: '1845 Wasp Boulevard'    
+        city: 'Honolulu'    
+        state: 'HI'    
+        postal-code: '96818'    
+  - name: 'Patrick Star'   
+    affiliations:   
+      - name: 'NOAA Fisheries Southeast Fisheries Science Center'   
+        address: '75 Virginia Beach Drive'   
+        city: 'Miami'   
+        state: 'FL'   
+        postal-code: '33149'   
+   
+date: today    
+lang: en     
+keep-tex: true     
+cover:     
+pdf-engine: lualatex    
+format:     
+  pdf:     
+    documentclass: scrartcl    
+    number-sections: true    
+    template-partials:    
+      - 'support_files/before-body.tex'    
+      - 'support_files/_titlepage.tex'    
+    include-in-header:    
+      - 'support_files/in-header.tex'    
+    toc: true    
+    lof: true    
+    lot: true    
+    titlepage-geometry:     
+      - top=2in    
+      - bottom=1in    
+      - right=1in    
+      - left=1in    
+output-file: 'Opakapaka_SAR_2024'     
+params:    
+   office: 'PIFSC'    
+   species: 'Opakapaka'    
+   spp_latin: 'Pristipomoides filamentosus'    
+   region: 'U.S. West Coast'    
+bibliography:     
+-  asar_references.bib     
 ---
 
 ```{r} 
 #| label: 'output_and_quantities'
 #| echo: false 
 #| warning: false 
-#| eval: false 
+#| eval: true 
 # load converted output from asar::convert_output() 
-output <- utils::read.csv('/') 
+output <- utils::read.csv('C:/Users/Megumi.Oshima/Documents/workflow_workthrough/opaka_convert_output.csv') 
 # Call reference points and quantities below 
 output <- output |> 
   dplyr::mutate(estimate = as.numeric(estimate), 
@@ -143,12 +148,13 @@ R0 <- output |>
 
 Please cite this publication as: 
 
-Oshima, M. 2024. Stock Assessment for Opakapaka (\textit{Pristipomoides filamentosus}) on U.S. West Coast in 2024. NOAA Tech. Memo. [TECH MEMO NUMBER], [XX] p.
+Oshima, M. 2024. Stock Assessment for Opakapaka (\textit{Pristipomoides filamentosus}) on U.S. West Coast in 2024. NOAA Tech. Memo. [TECH MEMO NUMBER], [XX] p.    
+
 
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'executive_summary'
+#| label: '01_executive_summary'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -159,7 +165,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'introduction'
+#| label: '02_introduction'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -170,7 +176,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'data'
+#| label: '03_data'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -181,7 +187,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'assessment-configuration'
+#| label: '04a_assessment-configuration'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -192,7 +198,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'assessment-results'
+#| label: '04b_assessment-results'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -203,7 +209,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'assessment-sensitivity'
+#| label: '04c_assessment-sensitivity'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -214,7 +220,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'assessment-benchmarks'
+#| label: '04d_assessment-benchmarks'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -225,7 +231,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'assessment-projections'
+#| label: '04e_assessment-projections'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -236,7 +242,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'discussion'
+#| label: '05_discussion'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -247,7 +253,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'acknowledgments'
+#| label: '06_acknowledgments'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -258,7 +264,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'references'
+#| label: '07_references'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -269,7 +275,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'tables'
+#| label: '08_tables'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -280,7 +286,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'figures'
+#| label: '09_figures'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -291,7 +297,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'notes'
+#| label: '10_notes'
 #| eval: true
 #| echo: false
 #| warning: false
@@ -302,7 +308,7 @@ cat(a, sep = '\n')
  {{< pagebreak >}} 
 
 ```{r, results='asis'}
-#| label: 'appendix'
+#| label: '11_appendix'
 #| eval: true
 #| echo: false
 #| warning: false

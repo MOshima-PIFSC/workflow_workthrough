@@ -230,3 +230,5 @@ if (file.exists(file.path(rda_dir, 'pop.naa_figure.rda'))){
 pop.naa_plot
 ``` 
 
+
+![Plot showing the ratio of SPR to SPR50 4 models.](SPRratio.png){#fig-sprratio}
