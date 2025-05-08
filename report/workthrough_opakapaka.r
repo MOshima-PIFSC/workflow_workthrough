@@ -25,4 +25,6 @@ create_tables_doc(subdir = file.path(getwd(), "report"), rda_dir = getwd())
 ## create figures doc
 create_figures_doc(subdir = file.path(getwd(), "report"), rda_dir = getwd())
 
+## update preamble  
+create_template(rerender_skeleton = TRUE, file_dir = file.path(getwd(), "report"), model_results = "opaka_convert_output.csv", resdir = getwd())
 
